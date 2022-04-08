@@ -47,9 +47,10 @@ addEventListener('keyup', function (event) {
 var starPosX = canvas.width / 2;
 var starPosY = canvas.height / 2;
 
-var hizAyari;
+const hizAyari=null;
+var hizAyari2;
 var starH = {
-    hizAyari: 5
+   hizAyari : 5
 };
 
 var miniH = {};
@@ -105,18 +106,17 @@ var hareket = function () {
             clearInterval(timerInterval);
             showOnFinish();
             
-            button.style.display = "block";
+            
             button.addEventListener('click', function () {
-                startTimer();
-                
-               
-                score = 0;
-                
-                koordinat();
-    
-                button.style.display = "none";
-                
-    
+            
+            area.src="images/a.jpg";
+            score = 0;
+            
+            koordinat();
+            
+            
+            button.style.display = "none";
+            
             })
         }
 
@@ -138,8 +138,8 @@ function showGameOver() {
 function showOnload() {
     ctx.font = "30px Tahoma";
     ctx.fillStyle = "white";
-    ctx.fillText("SCORE:", 250, 30);
-    ctx.fillText(score, 390, 30);
+    ctx.fillText("SCORE:", 500, 30);
+    ctx.fillText(score, 615, 30);
 }
 function Timer() {
     ctx.font = "30px Tahoma";
@@ -167,7 +167,7 @@ var enSon = function () {
     if (sayac > 0) {
         hareket();
         ciz();
-
+        
         requestAnimationFrame(enSon);
     }
     else if (sayac == 0) {
@@ -176,11 +176,11 @@ var enSon = function () {
         button.style.display = "block";
         button.addEventListener('click', function () {
             sayac = 10;
-            
+            area.src="images/background3.gif";
             score = 0;
             enSon();
             koordinat();
-
+            
             button.style.display = "none";
             
 
@@ -188,6 +188,7 @@ var enSon = function () {
     }
 
 };
-startTimer();
+
 koordinat();
 enSon();
+startTimer();
