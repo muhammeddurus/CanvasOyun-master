@@ -76,6 +76,7 @@ function startTimer() {
 
 
 var hareket = function () {
+    
     //yukarı
     if (38 in tus && starH.y > 7) {
         starH.y -= starH.hizAyari;
@@ -103,18 +104,19 @@ var hareket = function () {
         else if (score = 100) {
             clearInterval(timerInterval);
             showOnFinish();
+            
+            button.style.display = "block";
             button.addEventListener('click', function () {
-                sayac = 10;
-                area.src = "images/a.jpg";
+                startTimer();
+                
+               
                 score = 0;
                 
                 koordinat();
     
                 button.style.display = "none";
-
                 
-                
-
+    
             })
         }
 
@@ -147,6 +149,7 @@ function Timer() {
 }
 
 function showOnFinish() {
+    button.value = "Next Level";
     button.style.display = "block";
 }
 
